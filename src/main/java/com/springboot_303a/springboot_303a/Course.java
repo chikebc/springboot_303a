@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
-@Entity
+
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,6 +29,16 @@ public class Course {
     @NotNull
     @Min(3)
     private int credit;
+
+    public Course(@Size(min = 4) String title, @Size(min = 3) String instructor, @Size(min = 10) String description, @Min(3) int credit) {
+        this.title = title;
+        this.instructor = instructor;
+        this.description = description;
+        this.credit = credit;
+    }
+
+    public Course() {
+    }
 
     public long getId() {
         return id;
