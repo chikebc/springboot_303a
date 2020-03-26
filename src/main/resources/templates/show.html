@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Courses</title>
+</head>
+<body>
+<a href="/">Show All Courses</a> <br/>
+Title :<span th:text="${course.title}" ></span> <br/>
+Instructor :<span th:text="${course.instructor}" ></span> <br/>
+description :<span th:text="${course.description}" ></span> <br/>
+Credits :<span th:text="${course.credit}" ></span> <br/>
+<a th:href="@{/delete/{id}"(id="${course.id})}" >Delete This Course</a>
+</body>
+</html>
